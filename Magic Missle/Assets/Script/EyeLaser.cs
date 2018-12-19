@@ -38,7 +38,18 @@ public class EyeLaser : MonoBehaviour {
             if (Physics.Raycast(ray, out hit, magicRange, LayerMask.NameToLayer("Arms")))
             {
                 laserLine.SetPosition(1, hit.point);
+                EnemyHit health = hit.collider.GetComponent<EnemyHit>();
                 StartCoroutine(ShotEffect());
+
+                if (health != null)
+                {
+                    health.Damage(magicDamage);
+                }
+
+                if (hit.rigidbody != null)
+                {
+                    hit.rigidbody.AddForce(-hit.normal * hitForce);
+                }
             }
 
             else

@@ -17,9 +17,19 @@ public class EnemyHit : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (enemyhealth <=0)
-        {
-            Destroy gameObject;
-        }
+		//if (enemyhealth <=0)
+  //      {
+  //          Destroy gameObject;
+  //      }
 	}
+
+    public void Damage(int damageAmount)
+    {
+        enemyhealth -= damageAmount;
+
+        if (enemyhealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
