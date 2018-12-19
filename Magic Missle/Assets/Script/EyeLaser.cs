@@ -29,6 +29,7 @@ public class EyeLaser : MonoBehaviour {
 	void Update ()
     {
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        //if (Input.GetKey("Mouse1") && Time.time > nextFire)
 
         {
             nextFire = Time.time + fireRate;
