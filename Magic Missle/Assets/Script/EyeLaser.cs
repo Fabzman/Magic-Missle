@@ -15,12 +15,12 @@ public class EyeLaser : MonoBehaviour {
     private LineRenderer laserLine;
     private float nextFire;
     public BulletManager shot;
-    public ParticleSystem iceShot;
+    //public ParticleSystem iceShot;
 
     // Use this for initialization
     void Start ()
     {
-        laserLine = GetComponent<LineRenderer>();
+        //laserLine = GetComponent<LineRenderer>();
         magicAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
     }
@@ -28,7 +28,8 @@ public class EyeLaser : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        //if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         //if (Input.GetKey("Mouse1") && Time.time > nextFire)
 
         {
@@ -36,11 +37,11 @@ public class EyeLaser : MonoBehaviour {
 
             Ray ray = fpsCam.ViewportPointToRay(new Vector3(.5f, .5f, 0));
             RaycastHit hit;
-            laserLine.SetPosition(0, magicEnd.position);
+            //laserLine.SetPosition(0, magicEnd.position);
 
             if (Physics.Raycast(ray, out hit, magicRange, LayerMask.NameToLayer("Arms")))
             {
-                laserLine.SetPosition(1, hit.point);
+                //laserLine.SetPosition(1, hit.point);
                 EnemyHit health = hit.collider.GetComponent<EnemyHit>();
                 StartCoroutine(ShotEffect());
                 BulletManager newBullet = Instantiate(shot, magicEnd.position, magicEnd.rotation) as BulletManager;
@@ -62,7 +63,7 @@ public class EyeLaser : MonoBehaviour {
             else
 
             {
-                laserLine.SetPosition(1, fpsCam.transform.forward * magicRange);
+                //laserLine.SetPosition(1, fpsCam.transform.forward * magicRange);
             }
         }
 
@@ -73,8 +74,8 @@ public class EyeLaser : MonoBehaviour {
     {
         if(magicAudio)
             magicAudio.Play();
-        laserLine.enabled = true;
+        //laserLine.enabled = true;
         yield return shotDuration;
-        laserLine.enabled = false;
+        //laserLine.enabled = false;
     }
 }
