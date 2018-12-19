@@ -14,6 +14,7 @@ public class EyeLaser : MonoBehaviour {
     private AudioSource magicAudio;
     private LineRenderer laserLine;
     private float nextFire;
+    public BulletManager shot;
 
     // Use this for initialization
     void Start ()
@@ -40,6 +41,7 @@ public class EyeLaser : MonoBehaviour {
                 laserLine.SetPosition(1, hit.point);
                 EnemyHit health = hit.collider.GetComponent<EnemyHit>();
                 StartCoroutine(ShotEffect());
+                BulletManager newBullet = Instantiate(shot, magicEnd.position, magicEnd.rotation) as BulletManager;
 
                 if (health != null)
                 {
