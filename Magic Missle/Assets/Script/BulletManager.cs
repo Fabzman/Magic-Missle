@@ -7,6 +7,7 @@ public class BulletManager : MonoBehaviour
 
     public float bulletSpeed;
     public float lifetime;
+    public ParticleSystem ice;
 
 
     // Use this for initialization
@@ -26,14 +27,16 @@ public class BulletManager : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Boundary")
+        if (other.tag == "Mountain")
         {
+            Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -15,6 +15,7 @@ public class EyeLaser : MonoBehaviour {
     private LineRenderer laserLine;
     private float nextFire;
     public BulletManager shot;
+    public ParticleSystem iceShot;
 
     // Use this for initialization
     void Start ()
@@ -42,10 +43,13 @@ public class EyeLaser : MonoBehaviour {
                 EnemyHit health = hit.collider.GetComponent<EnemyHit>();
                 StartCoroutine(ShotEffect());
                 BulletManager newBullet = Instantiate(shot, magicEnd.position, magicEnd.rotation) as BulletManager;
+                newBullet.transform.forward = ray.direction;
 
                 if (health != null)
                 {
                     health.Damage(magicDamage);
+                    //iceShot.Play();
+                    //Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
                 }
 
                 if (hit.rigidbody != null)
