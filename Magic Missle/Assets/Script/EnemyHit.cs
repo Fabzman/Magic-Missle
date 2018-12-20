@@ -33,7 +33,8 @@ public class EnemyHit : MonoBehaviour {
 
         if (enemyhealth <= 0)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

@@ -7,6 +7,13 @@ TagManager:
   - Interact
   - Enemy
   - Mountain
+  - Pickup
+  - Ammo
+  - Health
+  - Shield
+  - Mega Health
+  - Powerup
+  - Potion
   layers:
   - Default
   - TransparentFX
