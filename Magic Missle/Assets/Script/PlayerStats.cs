@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour {
 
     public int ammo;
     public int health;
-    public int shield;
+    public float shield;
     public bool powerUp;
     public TextMeshProUGUI healthCounter;
     public TextMeshProUGUI ammoCounter;
@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour {
     {
         ammoCounter.text = "Ammo: " + ammo.ToString();
         healthCounter.text = "Health: " + health.ToString();
-        shieldCounter.text = "Shield: " + shield.ToString();
+        shieldCounter.text = "Shield: " + shield.ToString("F0");
     }
 	
 	// Update is called once per frame
@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour {
 
         ammoCounter.text = "Ammo: " + ammo.ToString();
         healthCounter.text = "Health: " + health.ToString();
-        shieldCounter.text = "Shield: " + shield.ToString();
+        shieldCounter.text = "Shield: " + shield.ToString("F0");
 
         //if (health >= 100)
         //      {
