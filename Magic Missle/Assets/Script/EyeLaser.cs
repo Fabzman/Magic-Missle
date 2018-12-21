@@ -13,6 +13,7 @@ public class EyeLaser : MonoBehaviour {
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
     private AudioSource magicAudio;
     private LineRenderer laserLine;
+    public PlayerStats player;
     private float nextFire;
     public BulletManager shot;
     //public ParticleSystem iceShot;
@@ -23,13 +24,14 @@ public class EyeLaser : MonoBehaviour {
         //laserLine = GetComponent<LineRenderer>();
         magicAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
+        player = GetComponentInParent<PlayerStats>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         //if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire && player.ammo > 0)
         //if (Input.GetKey("Mouse1") && Time.time > nextFire)
 
         {
@@ -45,11 +47,13 @@ public class EyeLaser : MonoBehaviour {
                 EnemyHit health = hit.collider.GetComponent<EnemyHit>();
                 StartCoroutine(ShotEffect());
                 BulletManager newBullet = Instantiate(shot, magicEnd.position, magicEnd.rotation) as BulletManager;
+                player.ammo -= 1;
                 newBullet.transform.forward = ray.direction;
 
                 if (health != null)
                 {
                     health.Damage(magicDamage);
+                    //player.ammo -= 1;
                     //iceShot.Play();
                     //Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
                 }

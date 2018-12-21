@@ -29,6 +29,10 @@ public class PlayerStats : MonoBehaviour {
         ammo = Mathf.Clamp(ammo, 0, 100);
         shield = Mathf.Clamp(shield, 0, 100);
 
+        ammoCounter.text = "Ammo: " + ammo.ToString();
+        healthCounter.text = "Health: " + health.ToString();
+        shieldCounter.text = "Shield: " + shield.ToString();
+
         //if (health >= 100)
         //      {
         //          return;
