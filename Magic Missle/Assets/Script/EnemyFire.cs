@@ -33,7 +33,13 @@ public class EnemyFire : MonoBehaviour {
         if (other.tag != "Enemy")
         {
             Destroy(gameObject);
-            Debug.Log(other.tag);
+            //Debug.Log(other.tag);
+        }
+
+        if (other.tag == "Walls")
+        {
+            Destroy(gameObject);
+            //Debug.Log(other.tag);
         }
     }
 }

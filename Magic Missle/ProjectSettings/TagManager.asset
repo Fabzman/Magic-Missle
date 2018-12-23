@@ -14,6 +14,9 @@ TagManager:
   - Mega Health
   - Powerup
   - Potion
+  - Walls
+  - Crystal
+  - MagicWall
   layers:
   - Default
   - TransparentFX

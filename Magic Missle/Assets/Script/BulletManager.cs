@@ -8,12 +8,14 @@ public class BulletManager : MonoBehaviour
     public float bulletSpeed;
     public float lifetime;
     public ParticleSystem ice;
+    public GameObject magicWall;
 
 
     // Use this for initialization
     void Start()
     {
         Destroy(gameObject, lifetime);
+        magicWall = GameObject.FindGameObjectWithTag("MagicWall");
     }
 
     // Update is called once per frame
@@ -27,6 +29,13 @@ public class BulletManager : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
+            Destroy(gameObject);
+        }
+
+        if (other.tag == "Crystal")
+        {
+            magicWall.SetActive(false);
             Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
             Destroy(gameObject);
         }
