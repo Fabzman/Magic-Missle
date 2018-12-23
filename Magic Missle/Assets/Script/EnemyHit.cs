@@ -7,10 +7,11 @@ public class EnemyHit : MonoBehaviour {
 
     public int enemyhealth;
     public ParticleSystem ice;
+    public AudioClip death;
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         //ice = GetComponent<ParticleSystem>();
     }
@@ -34,6 +35,7 @@ public class EnemyHit : MonoBehaviour {
         if (enemyhealth <= 0)
         {
             //gameObject.SetActive(false);
+            AudioSource.PlayClipAtPoint(death, Camera.main.transform.position);
             Destroy(gameObject);
         }
     }

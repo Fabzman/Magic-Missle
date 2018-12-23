@@ -11,7 +11,7 @@ public class EyeLaser : MonoBehaviour {
     public Transform magicEnd;
     private Camera fpsCam;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-    private AudioSource magicAudio;
+    public AudioClip magic;
     private LineRenderer laserLine;
     public PlayerStats player;
     private float nextFire;
@@ -22,7 +22,7 @@ public class EyeLaser : MonoBehaviour {
     void Start ()
     {
         //laserLine = GetComponent<LineRenderer>();
-        magicAudio = GetComponent<AudioSource>();
+        //magicAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
         player = GetComponentInParent<PlayerStats>();
     }
@@ -53,6 +53,7 @@ public class EyeLaser : MonoBehaviour {
                 if (health != null)
                 {
                     health.Damage(magicDamage);
+                    AudioSource.PlayClipAtPoint(magic, Camera.main.transform.position);
                     //player.ammo -= 1;
                     //iceShot.Play();
                     //Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
@@ -76,8 +77,8 @@ public class EyeLaser : MonoBehaviour {
     private IEnumerator ShotEffect()
 
     {
-        if(magicAudio)
-            magicAudio.Play();
+        //if (magicAudio)
+        //    magicAudio.Play();
         //laserLine.enabled = true;
         yield return shotDuration;
         //laserLine.enabled = false;

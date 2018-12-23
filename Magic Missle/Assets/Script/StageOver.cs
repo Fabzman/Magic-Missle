@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StageOver : MonoBehaviour {
 
+    public AudioClip stageEnd;
 
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -23,6 +23,7 @@ public class StageOver : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(stageEnd, Camera.main.transform.position);
             SceneManager.LoadScene("Wizard Tower");
         }
     }

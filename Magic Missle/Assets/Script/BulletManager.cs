@@ -9,6 +9,7 @@ public class BulletManager : MonoBehaviour
     public float lifetime;
     public ParticleSystem ice;
     public GameObject magicWall;
+    public AudioClip crack;
 
 
     // Use this for initialization
@@ -23,6 +24,7 @@ public class BulletManager : MonoBehaviour
     {
         //makes the bullet go whoosh
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+        //AudioSource.PlayClipAtPoint(shot, Camera.main.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +39,7 @@ public class BulletManager : MonoBehaviour
         {
             magicWall.SetActive(false);
             Instantiate(ice.gameObject, transform.position, ice.transform.rotation);
+            AudioSource.PlayClipAtPoint(crack, Camera.main.transform.position);
             Destroy(gameObject);
         }
     }

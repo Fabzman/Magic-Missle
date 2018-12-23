@@ -13,6 +13,7 @@ public class EnemyShoot : MonoBehaviour {
     private float nextFire;
     public EnemyFire shot;
     public Transform magicStart;
+    public AudioClip fireball;
 
     // Use this for initialization
     void Start ()
@@ -28,6 +29,7 @@ public class EnemyShoot : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
             EnemyFire newBullet = Instantiate(shot, magicStart.position, magicStart.rotation) as EnemyFire;
+            AudioSource.PlayClipAtPoint(fireball, Camera.main.transform.position);
             Vector3 look = player.position;
             //look.y = newBullet.transform.position.y;
             newBullet.transform.LookAt(look);

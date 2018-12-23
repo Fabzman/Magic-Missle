@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 114650552538121576}
   - component: {fileID: 195430340282857026}
   - component: {fileID: 114789109420742746}
+  - component: {fileID: 81895395057552636}
   m_Layer: 0
   m_Name: Staff Wizard
   m_TagString: Enemy
@@ -2111,7 +2112,7 @@ Transform:
   - {fileID: 4649442118036214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4834265422955424
 Transform:
   m_ObjectHideFlags: 1
@@ -2375,6 +2376,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!81 &81895395057552636
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389166229946608}
+  m_Enabled: 0
 --- !u!96 &96339320092865072
 TrailRenderer:
   serializedVersion: 2
@@ -2526,6 +2534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyhealth: 15
   ice: {fileID: 198042232334680994, guid: eb4130462f5d2834dba10a8c5dbc0782, type: 2}
+  death: {fileID: 8300000, guid: d8bb09cebce459d4f8f3e909bec7c3ed, type: 3}
 --- !u!114 &114650552538121576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2539,6 +2548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   trackingDistance: 0
+  playerHit: {fileID: 0}
 --- !u!114 &114789109420742746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2555,8 +2565,9 @@ MonoBehaviour:
   magicDamage: 1
   fireRate: 5
   magicRange: 50
-  shot: {fileID: 114439645114061654, guid: c4cabba8fd5d0774a88b9896fa16898c, type: 2}
+  shot: {fileID: 114608091894840006, guid: c4cabba8fd5d0774a88b9896fa16898c, type: 2}
   magicStart: {fileID: 4649442118036214}
+  fireball: {fileID: 8300000, guid: 31fb7df3ce26a804391516e28c3180bf, type: 3}
 --- !u!136 &136566193182392630
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2579,10 +2590,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.912378
+  m_Radius: 1.9026845
   m_Height: 7.35078
   m_Direction: 1
-  m_Center: {x: -0.0029293695, y: 3.1753893, z: -0.00000015886657}
+  m_Center: {x: -0.002929369, y: 3.1753893, z: 0.006893792}
 --- !u!137 &137022355983543300
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2794,7 +2805,7 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389166229946608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5

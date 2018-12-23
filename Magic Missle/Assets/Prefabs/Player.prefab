@@ -493,7 +493,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964482806903168}
   m_LocalRotation: {x: -0, y: 0.70711386, z: -0, w: -0.7070998}
-  m_LocalPosition: {x: 1.1, y: -14.14, z: -3.5}
+  m_LocalPosition: {x: 1.1000061, y: -14.139999, z: -3.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4965725651998384}
@@ -1169,13 +1169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317952c4f938ccd47b9c1e82d72ce283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 50
+  ammo: 100
   health: 50
   shield: 10
   powerUp: 0
   healthCounter: {fileID: 0}
   ammoCounter: {fileID: 0}
   shieldCounter: {fileID: 0}
+  shieldS: {fileID: 8300000, guid: 32d29a9d34fe0e241b0c7bfce3c37bcd, type: 3}
+  healthS: {fileID: 8300000, guid: f51bb90b47383ab4cac55cb8544d2f28, type: 3}
+  ammoS: {fileID: 8300000, guid: e0df7a33ff7e466418ce5370cdcdb128, type: 3}
+  powerUPS: {fileID: 8300000, guid: 77326925aed066542a8b117d8f927d61, type: 3}
+  megaHealthS: {fileID: 8300000, guid: 5bcb161d86ee020468de6b68bb08ebfb, type: 3}
 --- !u!114 &114961369690725730
 MonoBehaviour:
   m_ObjectHideFlags: 1

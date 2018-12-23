@@ -234,6 +234,7 @@ MonoBehaviour:
   lifetime: 5
   ice: {fileID: 198042232334680994, guid: eb4130462f5d2834dba10a8c5dbc0782, type: 2}
   magicWall: {fileID: 0}
+  crack: {fileID: 8300000, guid: 5651864e1c5ad474688e671c7ad50bc8, type: 3}
 --- !u!135 &135323749791718512
 SphereCollider:
   m_ObjectHideFlags: 1

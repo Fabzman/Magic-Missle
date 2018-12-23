@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour {
     public Transform player;
     private NavMeshAgent agent;
     public float trackingDistance;
+    public AudioClip death;
+    public AudioClip playerHit;
 
     // Use this for initialization
     void Start ()
@@ -44,6 +47,13 @@ public class Enemy : MonoBehaviour {
         if (other.tag == "Player")
         {
             _player.health -= 1;
+            AudioSource.PlayClipAtPoint(playerHit, Camera.main.transform.position);
+
+            if (_player.health <= 0)
+            {
+                AudioSource.PlayClipAtPoint(death, Camera.main.transform.position);
+                SceneManager.LoadScene("Wizard Tower");
+            }
         }
     }
 }

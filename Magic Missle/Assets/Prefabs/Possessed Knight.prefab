@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 65707074337555836}
   - component: {fileID: 114512318374550954}
   - component: {fileID: 195186475462572872}
+  - component: {fileID: 81168530500880854}
   m_Layer: 0
   m_Name: Possessed Knight
   m_TagString: Enemy
@@ -1839,8 +1840,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362210230155450}
-  m_LocalRotation: {x: -0, y: 0.7916871, z: -0, w: 0.6109269}
-  m_LocalPosition: {x: -102.22, y: -13.66, z: 4.42}
+  m_LocalRotation: {x: -0, y: 0.49763253, z: -0, w: 0.867388}
+  m_LocalPosition: {x: 19.49292, y: -2.994217, z: -13.5563965}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4675424242362198}
@@ -1852,7 +1853,7 @@ Transform:
   - {fileID: 4025070444436062}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 104.687004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 59.687004, z: 0}
 --- !u!4 &4442999310825088
 Transform:
   m_ObjectHideFlags: 1
@@ -2674,6 +2675,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8707131, z: 1}
   m_Center: {x: -0, y: 1.0173, z: 0}
+--- !u!81 &81168530500880854
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362210230155450}
+  m_Enabled: 0
 --- !u!95 &95843259239154296
 Animator:
   serializedVersion: 3
@@ -2705,6 +2713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyhealth: 10
   ice: {fileID: 198042232334680994, guid: eb4130462f5d2834dba10a8c5dbc0782, type: 2}
+  death: {fileID: 8300000, guid: 464a92c1796db0f4d8667e2c75a53d43, type: 3}
 --- !u!114 &114512318374550954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2718,6 +2727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4717874191183446, guid: 2e8b61646c403e54f97790d00b49133c, type: 2}
   trackingDistance: 50
+  death: {fileID: 8300000, guid: 464a92c1796db0f4d8667e2c75a53d43, type: 3}
+  playerHit: {fileID: 8300000, guid: b4e0a96e90935914d82772a108c446d2, type: 3}
 --- !u!114 &114978620176382048
 MonoBehaviour:
   m_ObjectHideFlags: 1
