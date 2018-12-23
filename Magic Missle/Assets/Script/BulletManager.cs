@@ -24,7 +24,7 @@ public class BulletManager : MonoBehaviour
     {
         //makes the bullet go whoosh
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
-        //AudioSource.PlayClipAtPoint(shot, Camera.main.transform.position);
+        //AudioSource.PlayClipAtPoint(magic, Camera.main.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
