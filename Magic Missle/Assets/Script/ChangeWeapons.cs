@@ -65,16 +65,19 @@ public class ChangeWeapons : MonoBehaviour
         //    shieldRenderer.material.color = materialColor;
         //}
 
-        if (Input.GetKeyDown(KeyCode.E) && player.shield > 0)
+        //if (Input.GetKeyDown(KeyCode.E) && player.shield > 0)
+        if (Input.GetButtonDown("Fire2") && player.shield > 0)
         {
             shieldRenderer.material.DOFade(0.5F, 1F);
         }
-        else if (Input.GetKeyUp(KeyCode.E))
+        //else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetButtonUp("Fire2"))
         {
             shieldRenderer.material.DOFade(0F, 1F);
         }
 
-        if (Input.GetKey(KeyCode.E) && player.shield > 0)
+        //if (Input.GetKey(KeyCode.E) && player.shield > 0)
+        if (Input.GetButtonDown("Fire2") && player.shield > 0)
         {
             player.shield -= Time.deltaTime;
             if (player.shield <= 0)
